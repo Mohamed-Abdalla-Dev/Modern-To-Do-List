@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  animation: slideDown 0.6s ease-out;
+}
+
+.app-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.app-header p {
+  font-size: 1em;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.todos-container {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.todo-item:hover {
+  background-color: #f8f9ff;
+  padding-left: 20px;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item.completed {
+  opacity: 0.65;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.todo-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.todo-checkbox:hover {
+  transform: scale(1.15);
+}
+
+.todo-text {
+  flex: 1;
+  word-break: break-word;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 0;
+  gap: 12px;
+}
+@media (max-width: 768px) {
+  .todo-form {
+    flex-direction: column;
+  }
+}
+.todo-input {
+  flex: 1;
+  padding: 13px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.todo-input:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.todo-input::placeholder {
+  color: #999;
+}
+
+.todo-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 13px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.todo-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.todo-button:active {
+  transform: translateY(0);
+}
+
+.todo-button.active {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
+}
+
+.delete-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-button:hover {
+  background-color: #ff5252;
+  transform: scale(1.1);
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.filter-buttons .todo-button {
+  flex: 1;
+  min-width: 110px;
+  text-align: center;
+}
+
+.no-todos {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 18px;
+  font-weight: 300;
+}
